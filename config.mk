@@ -1,6 +1,6 @@
-LOCAL_PATH := vendor/moto/dolby
+VENDOR_PATH := vendor/moto/dolby
 
-$(call inherit-product, $(LOCAL_PATH)/moto_dolby.mk)
+$(call inherit-product, $(VENDOR_PATH)/moto_dolby.mk)
 
 # Audio Motodolby
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -11,12 +11,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio Motodolby Config
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/dax-default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dolby/dax-default.xml \
-    $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
+    $(VENDOR_PATH)/configs/audio/dax-default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dolby/dax-default.xml \
+    $(VENDOR_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
 
 # HIDL
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(DEVICE_PATH)/configs/hidl/framework_compatibility_matrix.xml
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/hidl/manifest.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(VENDOR_PATH)/configs/hidl/framework_compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(VENDOR_PATH)/configs/hidl/manifest.xml
 
 # Sepolicy
-BOARD_VENDOR_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy/vendor
+BOARD_VENDOR_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/vendor
